@@ -8,16 +8,17 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list c);
-int my_print_string(va_list s);
-int to_print_int(va_list i);
-int _print_dec(va_list d);
-
+int print_string(va_list s);
+int print_int(va_list i);
+int print_dec(va_list d);
+int print_binary(va_list b);
 /**
-  * struct _code_format - Struct format
+  * struct code_format - Struct format
+  *
   * @sc: The specifiers
   * @f: The function associated
   */
-typedef struct _code_format
+typedef struct code_format
 {
 	char *sc;
 	int (*f)(va_list);

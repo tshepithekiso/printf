@@ -9,20 +9,21 @@
   */
 int (*find_function(const char *format))(va_list)
 {
-	unsigned int c = 0;
+	unsigned int i = 0;
 	code_f find_f[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"i", to_print_int},
-		{"d", _print_dec},
+		{"i", print_int},
+		{"d", print_dec},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 
-	while (find_f[c].sc)
+	while (find_f[i].sc)
 	{
-		if (find_f[c].sc[0] == (*format))
-			return (find_f[c].f);
-		c++;
+		if (find_f[i].sc[0] == (*format))
+			return (find_f[i].f);
+		i++;
 	}
 	return (NULL);
 }
@@ -35,36 +36,36 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int (*f)(va_list);
-	unsigned int x = 0, cprint = 0;
+	unsigned int i = 0, cprint = 0;
 
 	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
-	while (format[x])
+	while (format[i])
 	{
-		while (format[x] != '%' && format[x])
+		while (format[i] != '%' && format[i])
 		{
-			_putchar(format[x]);
+			_putchar(format[i]);
 			cprint++;
-			x++;
+			i++;
 		}
-		if (format[x] == '\0')
+		if (format[i] == '\0')
 			return (cprint);
-		f = find_function(&format[x + 1]);
+		f = find_function(&format[i + 1]);
 		if (f != NULL)
 		{
 			cprint += f(ap);
-			x += 2;
+			i += 2;
 			continue;
 		}
-		if (!format[x + 1])
+		if (!format[i + 1])
 			return (-1);
-		_putchar(format[x]);
+		_putchar(format[i]);
 		cprint++;
-		if (format[x + 1] == '%')
-			x += 2;
+		if (format[i + 1] == '%')
+			i += 2;
 		else
-			x++;
+			i++;
 	}
 	va_end(ap);
 	return (cprint);

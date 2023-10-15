@@ -10,15 +10,15 @@
 int print_string(va_list s)
 {
 	char *my_string;
-	int  c = 0;
+	int  i = 0;
 
 	my_string = va_arg(s, char *);
 	if (my_string == NULL)
 		my_string = "(null)";
-	while (my_string[c])
+	while (my_string[i])
 	{
-		_putchar(my_string[c]);
-		c++;
+		_putchar(my_string[i]);
+		i++;
 	}
-	return (c);
+	return (i);
 }

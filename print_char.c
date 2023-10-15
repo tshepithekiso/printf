@@ -15,11 +15,11 @@ int print_char(va_list c)
 	return (1);
 }
 /**
- * print_percentage - %
+ * print_porcentage - %
  *
  * Return: 1.
  */
-int print_percentage(void)
+int print_porcentage(void)
 {
 	_putchar('%');
 	return (1);
