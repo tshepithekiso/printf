@@ -42,10 +42,11 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	while (format[x])
 	{
-		for (format[x] != '%' && format[x]; x++)
+		while (format[x] != '%' && format[x])
 		{
 			_putchar(format[x]);
 			cprint++;
+			x++;
 		}
 		if (format[x] == '\0')
 			return (cprint);
