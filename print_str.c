@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * my_print_string - writes the character c to stdout
+ * print_string - writes the character c to stdout
  * @s: The string to print
  *
  * Return: 1.
  */
-int my_print_string(va_list s)
+int print_string(va_list s)
 {
 	char *my_string;
 	int  c = 0;

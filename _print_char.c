@@ -1,12 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _print_char - writes the character c to stdout
+ * print_char - writes the character c to stdout
  * @c: The character to print
  *
  * Return: 1.
  */
-int _print_char(va_list c)
+int print_char(va_list c)
 {
 	unsigned char my_char;
 
