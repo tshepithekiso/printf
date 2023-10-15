@@ -11,11 +11,9 @@ int _print_char(va_list c);
 int my_print_string(va_list s);
 int to_print_int(va_list i);
 int _print_dec(va_list d);
-int print_percentage(void)
 
 /**
   * struct _code_format - Struct format
-  *
   * @sc: The specifiers
   * @f: The function associated
   */
