@@ -15,7 +15,7 @@ int (*find_function(const char *format))(va_list)
 		{"s", print_string},
 		{"i", print_int},
 		{"d", print_dec},
-		{"b", print_binary},
+		{"b", printf_num_bin},
 		{NULL, NULL}
 	};
 
