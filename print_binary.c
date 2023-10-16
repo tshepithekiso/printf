@@ -1,34 +1,34 @@
 #include "main.h"
 /**
- * printf_num_bin - converts unsigned int to a binary number.
- * @fig: arguments.
- * Return: 1.
+ * print_binary - converts to binary
+ * @b: argument
+ *
+ * Return: integer
  */
-int printf_num_bin(va_list fig)
+int print_binary(va_list b)
 {
 	int flag = 0;
-	int cont = 0;
-	int x, a = 1, y;
-	unsigned int num = va_arg(fig, unsigned int);
-	unsigned int z;
+	int count = 0;
+	int i, a = 1, k;
+	unsigned int num  = va_arg(b, unsigned int);
+	unsigned int p;
 
-	for (x = 0; x < 32; x++)
-
+	for (i = 0; i < 32; i++)
 	{
-		p = ((a << (31 - x)) & num);
-		if (z >> (31 - x))
+		p = ((a << (32 - i)) & num);
+		if (p >> (31 - i))
 			flag = 1;
 		if (flag)
 		{
-			y = z >> (31 - x);
-			_putchar(y + 48);
-			cont++;
+			k = p >> (31 - i);
+			_putchar(k + 48);
+			count++;
 		}
 	}
-	if (cont == 0)
+	if (count == 0)
 	{
-		cont++;
+		count++;
 		_putchar('0');
 	}
-	return (cont);
+	return (count);
 }
